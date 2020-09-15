@@ -14,7 +14,7 @@ export const gqlQuery = (query, variables) => {
     response = graphQLClient.request(query, variables);
   } catch (error) {
     response = { error };
-  };
-  
+  }
+
   return response;
 };

@@ -3,7 +3,7 @@ import { loadedPages } from '../store.js';
 import { gqlQuery } from './gql-query.js';
 
 
-export const getPostByUri = async (uri) => {
+export const getPageByUri = async (uri) => {
   const data = get(loadedPages).get(uri);
 
   if (data) {
@@ -23,10 +23,10 @@ export const getPostByUri = async (uri) => {
   `;
 
   const response = await gqlQuery(query, { uri });
-  
+
   if (response.data) {
     loadedPages.update((mp) => mp.set(uri, response.data));
   }
-  
+
   return response;
 };

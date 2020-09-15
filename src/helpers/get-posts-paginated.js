@@ -26,6 +26,6 @@ export const getPostsPaginated = async ({
   `;
 
   const response = await gqlQuery(query, { first: size, after: cursor });
-  
+
   return response;
 };

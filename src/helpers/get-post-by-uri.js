@@ -24,10 +24,10 @@ export const getPostByUri = async (uri) => {
   `;
 
   const response = await gqlQuery(query, { uri });
-  
+
   if (response.data) {
     loadedPosts.update((mp) => mp.set(uri, response.data));
   }
-  
+
   return response;
 };

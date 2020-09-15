@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { getPostsPaginated } from '../helpers/get-posts-paginated.js';
-  
+
   export let slug = '';
   
   let data;
@@ -10,7 +10,7 @@
   
   onMount(async () => {
     ({ data, error } = await getPostsPaginated());
-    
+  
     if (data) {
       ({ edges } = data.posts);
     }

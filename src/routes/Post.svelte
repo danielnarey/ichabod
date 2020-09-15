@@ -9,7 +9,7 @@
 
   $: (async () => {
     ({ data, error } = await getPostByUri(uri));
-    
+  
     if (data) {
       ({ post } = data);
     }

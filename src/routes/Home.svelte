@@ -7,7 +7,7 @@
 
   $: (async () => {
     ({ data, error } = await getPageByUri('/'));
-    
+  
     if (data) {
       ({ page } = data);
     }
