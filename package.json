@@ -1,0 +1,58 @@
+{
+  "name": "ichabod",
+  "version": "0.0.0",
+  "description": "Demo of a Svelte frontend for Wordpress using WPGraphQL",
+  "author": "Daniel C. Narey",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielnarey/ichabod"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "del dist/* && svelte-render",
+    "build:dev": "del dist/* && svelte-render --development",
+    "local": "netlify build --context deploy-preview && netlify dev",
+    "lint": "eslint --fix src",
+    "merge:next": "git checkout master && git pull && git merge next -s recursive -Xtheirs",
+    "serve": "sirv dist -s --port=5000",
+    "sync": "git pull && git add . && git commit -m 'automated sync' && git push",
+    "test": "npm run lint && npm run build",
+    "update": "updtr"
+  },
+  "dependencies": {
+    "@metamodern/copy-typefaces": "^2.0.4",
+    "@metamodern/design-system": "^2.0.1",
+    "cssnano": "^4.1.10",
+    "navaid": "^1.1.1",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "sugarss": "^2.0.0",
+    "svelte": "^3.24.0",
+    "svelte-preprocess": "^4.0.8",
+    "tailwindcss": "^1.5.2",
+    "typeface-ibm-plex-sans": "0.0.75"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.2",
+    "@metamodern/svelte-render": "^2.0.3",
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "core-js": "^3.6.5",
+    "del-cli": "^3.0.0",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "postcss": "^7.0.32",
+    "pug": "^3.0.0",
+    "rollup": "^2.22.2",
+    "rollup-plugin-terser": "^6.1.0",
+    "sirv-cli": "^1.0.3",
+    "updtr": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}
