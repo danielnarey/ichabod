@@ -24,6 +24,7 @@ const config = ({
         development ? [] : postcssPresetEnv({ browsers }),
         development ? [] : cssnano({ preset: 'default' }),
       ),
+      stripIndent: true,
     },
   }),
   onRender: (context, options) => copyTypefaces(context, options),

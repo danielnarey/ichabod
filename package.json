@@ -17,7 +17,7 @@
     "merge:next": "git checkout master && git pull && git merge next -s recursive -Xtheirs",
     "serve": "sirv dist -s --port=5000",
     "sync": "git pull && git add . && git commit -m 'automated sync' && git push",
-    "test": "npm run lint && npm run build",
+    "test": "npm run lint && npm run build:dev",
     "update": "updtr"
   },
   "dependencies": {
@@ -30,7 +30,7 @@
     "postcss-preset-env": "^6.7.0",
     "sugarss": "^3.0.0",
     "svelte": "^3.24.0",
-    "svelte-preprocess": "4.0.9",
+    "svelte-preprocess": "^4.2.1",
     "tailwindcss": "^1.5.2",
     "typeface-ibm-plex-sans": "0.0.75"
   },
@@ -38,8 +38,8 @@
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.2",
     "@metamodern/svelte-render": "^2.0.3",
-    "@rollup/plugin-commonjs": "^14.0.0",
-    "@rollup/plugin-node-resolve": "^8.4.0",
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
     "core-js": "^3.6.5",
     "del-cli": "^3.0.0",
     "eslint": "^7.5.0",
@@ -47,10 +47,10 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-svelte3": "^2.7.3",
     "graphql": "^15.3.0",
-    "postcss": "^7.0.32",
+    "postcss": "^8.0.3",
     "pug": "^3.0.0",
     "rollup": "^2.22.2",
-    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-terser": "^7.0.2",
     "sirv-cli": "^1.0.3",
     "updtr": "^3.1.0"
   },
