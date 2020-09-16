@@ -7,7 +7,7 @@ export const routes = [
     component: Home,
   },
   {
-    path: '/post/:slug',
+    path: '/post/:uri',
     component: Post,
   },
   {
