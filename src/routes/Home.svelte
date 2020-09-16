@@ -3,7 +3,7 @@
   import { getPageByUri } from '../helpers/get-page-by-uri.js';
   
   let page;
-  ler error;
+  let error;
 
   onMount(async () => {
     const response = await getPageByUri(uri);

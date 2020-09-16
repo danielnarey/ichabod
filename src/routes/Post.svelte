@@ -5,7 +5,7 @@
   export let uri;
 
   let post;
-  ler error;
+  let error;
 
   onMount(async () => {
     const response = await getPostByUri(uri);
