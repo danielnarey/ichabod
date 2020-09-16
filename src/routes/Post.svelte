@@ -3,16 +3,17 @@
   import { getPostByUri } from '../helpers/get-post-by-uri.js';
   
   export let uri;
-  
-  let data;
-  let error;
+
   let post;
+  ler error;
 
   onMount(async () => {
-    ({ data, error } = await getPostByUri(uri));
+    const response = await getPostByUri(uri);
   
-    if (data) {
-      ({ post } = data);
+    if (response.data) {
+      post = response.data.post;
+    } else {
+      error = response.error;
     }
   });
 

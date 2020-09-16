@@ -3,16 +3,17 @@
   import { getPostsPaginated } from '../helpers/get-posts-paginated.js';
 
   export let uri = '';
-  
-  let data;
-  let error;
+
   let edges = [];
-  
+  let error;
+
   onMount(async () => {
-    ({ data, error } = await getPostsPaginated());
+    const response = await getPostsPaginated();
   
-    if (data) {
-      ({ edges } = data.posts);
+    if (response.data) {
+      edges = response.data.posts.edges;
+    } else {
+      error = response.error;
     }
   });
 

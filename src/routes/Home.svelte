@@ -2,15 +2,16 @@
   import { onMount } from 'svelte';
   import { getPageByUri } from '../helpers/get-page-by-uri.js';
   
-  let data;
-  let error;
   let page;
+  ler error;
 
   onMount(async () => {
-    ({ data, error } = await getPageByUri('/'));
+    const response = await getPageByUri(uri);
   
-    if (data) {
-      ({ page } = data);
+    if (response.data) {
+      page = response.data.page;
+    } else {
+      error = response.error;
     }
   });
 
