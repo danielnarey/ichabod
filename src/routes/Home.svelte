@@ -6,13 +6,7 @@
   let error;
 
   onMount(async () => {
-    const response = await getPageByUri('/');
-  
-    if (response.data) {
-      page = response.data.page;
-    } else {
-      error = response.error;
-    }
+    ({ page, error } = await getPageByUri('/'));
   });
 
 </script>
@@ -24,8 +18,7 @@
       .heading
         h1= '{page.title}'
       
-      section
-        p= '{page.content}'
+      section= '{@html page.content}'
 
     +elseif('error')
       code.error= '{error}'
