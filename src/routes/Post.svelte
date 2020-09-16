@@ -24,7 +24,6 @@
     .typeset
       .heading
         h1= '{post.title}'
-        p= '{post.author}'
         p= '{post.date}'
       
       section

@@ -16,7 +16,6 @@ export const getPostByUri = async (uri) => {
         id
         uri
         title
-        author
         date
         content
       }

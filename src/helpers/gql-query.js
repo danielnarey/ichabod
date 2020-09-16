@@ -7,11 +7,11 @@ const graphQLClient = new GraphQLClient(
   { headers: {} },
 );
 
-export const gqlQuery = (query, variables) => {
+export const gqlQuery = async (query, variables) => {
   let response;
 
   try {
-    response = graphQLClient.request(query, variables);
+    response = await graphQLClient.request(query, variables);
   } catch (error) {
     response = { error };
   }
