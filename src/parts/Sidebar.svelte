@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import { getPostsPaginated } from '../helpers/get-posts-paginated.js';
 
-  export let slug = '';
+  export let uri = '';
   
   let data;
   let error;
@@ -30,7 +30,7 @@
           li
             a.unstyled(
               href='{k.node.uri}'
-              class:active='{k.node.uri === slug}'
+              class:active='{k.node.uri === uri}'
             )= '{k.node.title}'
     
     +if('error')

@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from 'svelte';
   import { getPostByUri } from '../helpers/get-post-by-uri.js';
   
   export let uri;
@@ -7,13 +8,13 @@
   let error;
   let post;
 
-  $: (async () => {
+  onMount(async () => {
     ({ data, error } = await getPostByUri(uri));
   
     if (data) {
       ({ post } = data);
     }
-  })();
+  });
 
 </script>
 

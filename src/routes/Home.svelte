@@ -1,17 +1,18 @@
 <script>
+  import { onMount } from 'svelte';
   import { getPageByUri } from '../helpers/get-page-by-uri.js';
   
   let data;
   let error;
   let page;
 
-  $: (async () => {
+  onMount(async () => {
     ({ data, error } = await getPageByUri('/'));
   
     if (data) {
       ({ page } = data);
     }
-  })();
+  });
 
 </script>
 
