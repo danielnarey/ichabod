@@ -6,7 +6,7 @@
   let error;
 
   onMount(async () => {
-    const response = await getPageByUri(uri);
+    const response = await getPageByUri('/');
   
     if (response.data) {
       page = response.data.page;
