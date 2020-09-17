@@ -29,7 +29,7 @@
         +each('edges as k')
           li
             a.unstyled(
-              href='post{k.node.uri}'
+              href='/post{k.node.uri}'
               class:active='{k.node.uri === uri}'
             )= '{k.node.title}'
     

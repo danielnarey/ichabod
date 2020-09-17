@@ -1,9 +1,9 @@
 <template lang="pug">
   header
     .wrapper
-      img(src='/brand-logo.svg' alt='[logo]')
+      img(src='/brand-icon.svg' alt='[logo]')
     
-    .logo= 'Metamodern | Open Source'
+    .logo= 'Metamodern'
 
   #shadowHeader
 
@@ -30,7 +30,7 @@
   
   .logo
     @apply text-white
-    @apply font-bold text-3xl leading-none
+    @apply font-semibold text-2xl leading-none
 
   #shadowHeader
     @apply w-screen
