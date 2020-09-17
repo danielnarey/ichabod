@@ -22,7 +22,7 @@
         p= '{data.post.date}'
       
       section
-        p= '{data.post.content}'
+        p= '{@html data.post.content}'
 
     +elseif('error')
       code.error= '{error}'
