@@ -2,23 +2,23 @@
   import { onMount } from 'svelte';
   import { getPageByUri } from '../helpers/get-page-by-uri.js';
   
-  let page;
+  let data;
   let error;
 
   onMount(async () => {
-    ({ page, error } = await getPageByUri('/'));
+    ({ data, error } = await getPageByUri('/'));
   });
 
 </script>
 
 
 <template lang="pug">
-  +if('page')
+  +if('data')
     .typeset
       .heading
-        h1= '{page.title}'
+        h1= '{data.page.title}'
       
-      section= '{@html page.content}'
+      section= '{@html data.page.content}'
 
     +elseif('error')
       code.error= '{error}'

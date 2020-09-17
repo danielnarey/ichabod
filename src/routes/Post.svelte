@@ -4,31 +4,25 @@
   
   export let uri;
 
-  let post;
+  let data;
   let error;
 
   onMount(async () => {
-    const response = await getPostByUri(uri);
-  
-    if (response.data) {
-      post = response.data.post;
-    } else {
-      error = response.error;
-    }
+    ({ data, error } = await getPostByUri(uri));
   });
 
 </script>
 
 
 <template lang="pug">
-  +if('post')
+  +if('data')
     .typeset
       .heading
-        h1= '{post.title}'
-        p= '{post.date}'
+        h1= '{data.post.title}'
+        p= '{data.post.date}'
       
       section
-        p= '{post.content}'
+        p= '{data.post.content}'
 
     +elseif('error')
       code.error= '{error}'

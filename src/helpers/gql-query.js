@@ -8,13 +8,14 @@ const graphQLClient = new GraphQLClient(
 );
 
 export const gqlQuery = async (query, variables) => {
-  let response;
+  let data;
+  let error;
 
   try {
-    response = await graphQLClient.request(query, variables);
-  } catch (error) {
-    response = { error };
+    data = await graphQLClient.request(query, variables);
+  } catch (rejected) {
+    error = rejected;
   }
 
-  return response;
+  return { data, error };
 };
