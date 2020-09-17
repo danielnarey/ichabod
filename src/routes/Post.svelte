@@ -7,9 +7,9 @@
   let data;
   let error;
 
-  onMount(async () => {
+  $: (async () => {
     ({ data, error } = await getPostByUri(uri));
-  });
+  })();
 
 </script>
 
