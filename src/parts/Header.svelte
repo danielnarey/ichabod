@@ -3,7 +3,7 @@
     .wrapper
       img(src='/brand-icon.svg' alt='[logo]')
     
-    .logo= 'Metamodern'
+    .logo= 'Ichabod'
 
   #shadowHeader
 
